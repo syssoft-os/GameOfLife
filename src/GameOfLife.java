@@ -3,8 +3,8 @@ public class GameOfLife {
         Runnable r = new Runnable() {
             @Override
             public void run() {
-                TheGrid g = TheGrid.BingBang(10, 10, -1, 0.5);
-                g.simulateGenerations(100);
+                TheGrid g = TheGrid.BingBang(10000, 10000, -1, 0.5);
+                g.simulateGenerations(1000);
                 System.out.println("Survivors: " + g.numberOfSurvivors());
                 if (g.isStatic()) {
                     System.out.println("The grid is static");
