@@ -3,7 +3,8 @@ public class GameOfLife {
         Runnable r = new Runnable() {
             @Override
             public void run() {
-                TheGrid g = TheGrid.BingBang(10000, 10000, -1, 0.5);
+                // Testing with 1000 generations, 10k do not finish
+                TheGrid g = TheGrid.BingBang(1000, 1000, -1, 0.5);
                 g.simulateGenerations(1000);
                 System.out.println("Survivors: " + g.numberOfSurvivors());
                 if (g.isStatic()) {
@@ -15,6 +16,6 @@ public class GameOfLife {
         };
 
         double executionTime = Stopwatch.startstop(r);
-        System.out.println("Execution time: " + executionTime + " ms");
+        System.out.println("Execution time parallel: " + executionTime + " ms");
     }
 }
