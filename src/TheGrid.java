@@ -126,12 +126,12 @@ public class TheGrid {
         return true;
     }
 
-    public static TheGrid BingBang(int horizontal_dimension, int vertical_dimension, int seed, double density ) {
+    public static TheGrid BigBang(int horizontal_dimension, int vertical_dimension, int seed, double density) {
         TheGrid g = new TheGrid(horizontal_dimension, vertical_dimension);
-        Random rg = seed < 0 ? new Random() : new Random(seed);
+        seed = seed < 0 ? new Random().nextInt(Integer.MAX_VALUE) : seed;
         for (int col = 0; col < horizontal_dimension; col++) {
             for (int row = 0; row < vertical_dimension; row++) {
-                g.setCell(col, row, rg.nextDouble() < density);
+                g.setCell(col, row, Hashing.hash31Double(col, row, seed) < density);
             }
         }
         return g;
