@@ -1,6 +1,3 @@
-import java.util.Random;
-import java.util.concurrent.Callable;
-
 class Stopwatch {
 
     public static double startstop ( Runnable function ) {
