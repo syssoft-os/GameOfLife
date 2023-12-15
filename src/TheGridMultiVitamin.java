@@ -162,7 +162,7 @@ public class TheGridMultiVitamin {
                 if (j + 1 < wordsPerRow)
                     counts += (curGen[j + 1 + (i - 1) * wordsPerRow] + curGen[j + 1 + i * wordsPerRow] + curGen[j + 1 + (i + 1) * wordsPerRow]) << 60;
                 long nextCells = counts | cells;
-                nextGen[j + i * wordsPerRow] = nextCells & (nextCells >> 1) & (~((nextCells >> 2) | (nextCells >> 3))) & 0x1111111111111111L;
+                nextGen[j + i * wordsPerRow] = nextCells & (nextCells >>> 1) & (~((nextCells >>> 2) | (nextCells >>> 3))) & 0x1111111111111111L;
             }
         }
         swap();
@@ -199,7 +199,7 @@ public class TheGridMultiVitamin {
                 if (j + 1 < wordsPerRow)
                     counts += (curGen[j + 1 + (i - 1) * wordsPerRow] + curGen[j + 1 + i * wordsPerRow] + curGen[j + 1 + (i + 1) * wordsPerRow]) << 60;
                 long nextCells = counts | cells;
-                nextGen[j + i * wordsPerRow] = nextCells & (nextCells >> 1) & (~((nextCells >> 2) | (nextCells >> 3))) & 0x1111111111111111L;
+                nextGen[j + i * wordsPerRow] = nextCells & (nextCells >>> 1) & (~((nextCells >>> 2) | (nextCells >>> 3))) & 0x1111111111111111L;
             }
         });
         swap();
